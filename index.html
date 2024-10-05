@@ -1,105 +1,38 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABSLI Report Applications</title>
-    <!-- Include PyScript -->
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-    <py-env>
-        - numpy
-        - matplotlib
-        - pandas
-    </py-env>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            font-size: 24px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between;
-            width: 60%;
-            margin-bottom: 20px;
-        }
-
-        .center-left, .center-right {
-            width: 25%;
-            text-align: left;
-        }
-
-        .center {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .checkbox-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .checkbox-container label {
-            margin-bottom: 5px;
-        }
-
-        /*.checkbox-group {
-            margin-top: 10px;
-        }*/
-
-        .calendar {
-            display: block;
-            margin: 10px auto;
-        }
-
-        .submit-btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .submit-btn:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ABSLI Report Applications</title>
+        <!-- Include PyScript -->
+        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+        <py-env>
+            - numpy
+            - matplotlib
+            - pandas
+        </py-env>
+    </head>
+    
     <body>
-        <py-script>
-            import matplotlib.pyplot as plt
-            import numpy as np
+        import matplotlib.pyplot as plt
+        import numpy as np
 
-            # Generate random data
-            num_points = 100  # Number of points
-            x = np.random.rand(num_points) * 100  # Random x coordinates
-            y = np.random.rand(num_points) * 100  # Random y coordinates
+        # Generate random data
+        num_points = 100  # Number of points
+        x = np.random.rand(num_points) * 100  # Random x coordinates
+        y = np.random.rand(num_points) * 100  # Random y coordinates
 
-            # Create scatter plot
-            plt.figure(figsize=(8, 6))
-            plt.scatter(x, y, c='blue', alpha=0.5, edgecolors='w', s=100)
-            plt.title('Random Scatter Plot')
-            plt.xlabel('X-axis')
-            plt.ylabel('Y-axis')
-            plt.xlim(0, 100)
-            plt.ylim(0, 100)
-            plt.grid(True)
+        # Create scatter plot
+        plt.figure(figsize=(8, 6))
+        plt.scatter(x, y, c='blue', alpha=0.5, edgecolors='w', s=100)
+        plt.title('Random Scatter Plot')
+        plt.xlabel('X-axis')
+        plt.ylabel('Y-axis')
+        plt.xlim(0, 100)
+        plt.ylim(0, 100)
+        plt.grid(True)
 
-            # Show the plot
-            plt.show()
-        </py-script>
+        # Show the plot
+        plt.show()
     </body>
 </html>
