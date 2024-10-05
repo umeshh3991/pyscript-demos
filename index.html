@@ -11,26 +11,26 @@
     <body>
         <div id = "plot"></div>
         <py-script output = "plot">
-            import matplotlib.pyplot as plt
-            import numpy as np
+import matplotlib.pyplot as plt
+import numpy as np
 
-            # Generate random data
-            num_points = 100  # Number of points
-            x = np.random.rand(num_points) * 100  # Random x coordinates
-            y = np.random.rand(num_points) * 100  # Random y coordinates
+# Generate random data
+num_points = 100  # Number of points
+x = np.random.rand(num_points) * 100  # Random x coordinates
+y = np.random.rand(num_points) * 100  # Random y coordinates
 
-            # Create scatter plot
-            plt.figure(figsize=(8, 6))
-            plt.scatter(x, y, c='blue', alpha=0.5, edgecolors='w', s=100)
-            plt.title('Random Scatter Plot')
-            plt.xlabel('X-axis')
-            plt.ylabel('Y-axis')
-            plt.xlim(0, 100)
-            plt.ylim(0, 100)
-            plt.grid(True)
+# Create scatter plot
+plt.figure(figsize=(8, 6))
+plt.scatter(x, y, c='blue', alpha=0.5, edgecolors='w', s=100)
+plt.title('Random Scatter Plot')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.xlim(0, 100)
+plt.ylim(0, 100)
+plt.grid(True)
 
-            # Show the plot
-            plt.show()
+# Show the plot
+plt.show()
         </py-script>
     </body>
 </html>
