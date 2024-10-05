@@ -78,85 +78,28 @@
         }
     </style>
 </head>
-<body>
+    <body>
+        <py-script>
+            import matplotlib.pyplot as plt
+            import numpy as np
 
-    <!-- Header -->
-    <header>ABSLI Report Applications</header>
+            # Generate random data
+            num_points = 100  # Number of points
+            x = np.random.rand(num_points) * 100  # Random x coordinates
+            y = np.random.rand(num_points) * 100  # Random y coordinates
 
-    <!-- Container for Labels and Checkboxes -->
-    <div class="container">
-        <!-- Center-left section -->
-        <div class="center-left">
-            <label for="left-label"><b>Application List</b></label>
-            <div class="checkbox-container">
-                <label><input type="checkbox" id="selectAll"> Select All</label>
-                <label><input type="checkbox" id="left-checkbox1" class="checkbox"> EApp/MApp</label>
-                <label><input type="checkbox" id="left-checkbox2" class="checkbox"> EAppD2C</label>
-                <label><input type="checkbox" id="left-checkbox3" class="checkbox"> LEAP</label>
-            </div>
-        </div>
+            # Create scatter plot
+            plt.figure(figsize=(8, 6))
+            plt.scatter(x, y, c='blue', alpha=0.5, edgecolors='w', s=100)
+            plt.title('Random Scatter Plot')
+            plt.xlabel('X-axis')
+            plt.ylabel('Y-axis')
+            plt.xlim(0, 100)
+            plt.ylim(0, 100)
+            plt.grid(True)
 
-        <!-- Center-right section -->
-        <div class="center-right">
-            <label for="right-label"><b>Other Applications</b></label>
-            <div class="checkbox-container">
-                <label><input type="checkbox" id="selectAll"> Select All</label>
-                <label><input type="checkbox" id="right-checkbox1" class="checkbox"> Lead</label>
-                <label><input type="checkbox" id="right-checkbox2" class="checkbox"> InstaVerify</label>
-                <label><input type="checkbox" id="right-checkbox3" class="checkbox"> SalesBuddy</label>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <label for="month">Month: </label>
-        <select id="month">
-            <option value="1">January</option>
-            <option value="2">February</option>
-            <option value="3">March</option>
-            <option value="4">April</option>
-            <option value="5">May</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <option value="9">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-        </select>
-
-        <label for="year">Year: </label>
-        <input type="number" id="year" value="2024" min="1900" max="2100">
-    </div>
-
-    <!-- Submit Button -->
-    <button class="submit-btn" id="submit-btn">Submit</button>
-
-    <!-- PyScript -->
-    <py-script>
-        import matplotlib.pyplot as plt
-        import numpy as np
-
-        # Generate random data
-        num_points = 100  # Number of points
-        x = np.random.rand(num_points) * 100  # Random x coordinates
-        y = np.random.rand(num_points) * 100  # Random y coordinates
-
-        # Create scatter plot
-        plt.figure(figsize=(8, 6))
-        plt.scatter(x, y, c='blue', alpha=0.5, edgecolors='w', s=100)
-        plt.title('Random Scatter Plot')
-        plt.xlabel('X-axis')
-        plt.ylabel('Y-axis')
-        plt.xlim(0, 100)
-        plt.ylim(0, 100)
-        plt.grid(True)
-
-        # Show the plot
-        plt.show()
-
-        
-    </py-script>
-
-</body>
+            # Show the plot
+            plt.show()
+        </py-script>
+    </body>
 </html>
