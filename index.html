@@ -1,13 +1,141 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-    <title>Excel Data Filter and Graph</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABSLI Report Applications</title>
+    <!-- Include PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
+        header {
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+            margin-bottom: 20px;
+        }
+
+        .center-left, .center-right {
+            width: 25%;
+            text-align: left;
+        }
+
+        .center {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .checkbox-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .checkbox-container label {
+            margin-bottom: 5px;
+        }
+
+        /*.checkbox-group {
+            margin-top: 10px;
+        }*/
+
+        .calendar {
+            display: block;
+            margin: 10px auto;
+        }
+
+        .submit-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
 <body>
+
+    <!-- Header -->
+    <header>ABSLI Report Applications</header>
+
+    <!-- Container for Labels and Checkboxes -->
+    <div class="container">
+        <!-- Center-left section -->
+        <div class="center-left">
+            <label for="left-label"><b>Application List</b></label>
+            <div class="checkbox-container">
+                <label><input type="checkbox" id="selectAll"> Select All</label>
+                <label><input type="checkbox" id="left-checkbox1" class="checkbox"> EApp/MApp</label>
+                <label><input type="checkbox" id="left-checkbox2" class="checkbox"> EAppD2C</label>
+                <label><input type="checkbox" id="left-checkbox3" class="checkbox"> LEAP</label>
+            </div>
+        </div>
+
+        <!-- Center-right section -->
+        <div class="center-right">
+            <label for="right-label"><b>Other Applications</b></label>
+            <div class="checkbox-container">
+                <label><input type="checkbox" id="selectAll"> Select All</label>
+                <label><input type="checkbox" id="right-checkbox1" class="checkbox"> Lead</label>
+                <label><input type="checkbox" id="right-checkbox2" class="checkbox"> InstaVerify</label>
+                <label><input type="checkbox" id="right-checkbox3" class="checkbox"> SalesBuddy</label>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <label for="month">Month: </label>
+        <select id="month">
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+
+        <label for="year">Year: </label>
+        <input type="number" id="year" value="2024" min="1900" max="2100">
+    </div>
+
+    <!-- Submit Button -->
+    <button class="submit-btn" id="submit-btn">Submit</button>
+
+    <!-- PyScript -->
     <py-script>
-        print("Hello World") 
+        import pandas as pd
+        from datetime import datetime
+        from js import document
+        from pyodide.http import pyfetch
+
+        
     </py-script>
+
 </body>
 </html>
