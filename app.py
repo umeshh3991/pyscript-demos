@@ -75,7 +75,7 @@ with tab2:
         st.dataframe(L3_team_priority_sorted_df)
         
         number_of_results = L3_team_priority_filtered_df.shape[0]
-        st.markdown(f'***Total Priorityt Issues: {number_of_results}***')
+        st.markdown(f'***Total Priority Issues: {number_of_results}***')
         
         L3_priority_issues_count = L3_team_priority_filtered_df['Status'].value_counts().reset_index()
         L3_priority_issues_count.columns = ['Status', 'Count']
@@ -113,7 +113,7 @@ with tab2:
         L3_team_filtered_df = L3_team_open_issues[L3_team_open_issues["Assignee"].isin(L3_team_assignee_filter)]
         L3_selected_columns = ["Issue Type", "Issue key", "Summary", "Reporter", "Severity", "Applications Affected", "Created"]
         L3_team_col_filtered_df = L3_team_filtered_df.loc[:, L3_selected_columns]
-        L3_team_sorted_df = L3_team_col_filtered_df.sort_values(by=['Applications Affected', 'Created'], ascending=[False, True])
+        L3_team_sorted_df = L3_team_col_filtered_df.sort_values(by=['Severity','Applications Affected', 'Created'], ascending=[True,False, True])
     
         # Display the filtered DataFrame
         st.dataframe(L3_team_sorted_df)
@@ -142,7 +142,8 @@ with tab3:
             buis_team_priority_issues = JIRA_priority_task_volume[(JIRA_priority_task_volume['Assignee'] == 'Sarthak Singh') 
                                                                 | (JIRA_priority_task_volume['Assignee'] == 'Parth Thakkar')
                                                                 | (JIRA_priority_task_volume['Assignee'] == 'KIRAN BHAAVAN MEHTA')
-                                                                | (JIRA_priority_task_volume['Assignee'] == 'MaheshGundekar')]
+                                                                | (JIRA_priority_task_volume['Assignee'] == 'MaheshGundekar')
+                                                                | (JIRA_priority_task_volume['Assignee'] == 'Abhay Kamath')]
             
         else:
             print('The column does not exist in excel file')
@@ -162,7 +163,7 @@ with tab3:
         st.dataframe(buis_team_priority_filtered_df)
         
         number_of_results = buis_team_priority_filtered_df.shape[0]
-        st.markdown(f'***Total Priorityt Issues: {number_of_results}***')
+        st.markdown(f'***Total Priority Issues: {number_of_results}***')
         
         buis_priority_issues_count = buis_team_priority_filtered_df['Status'].value_counts().reset_index()
         buis_priority_issues_count.columns = ['Status', 'Count']
@@ -202,7 +203,7 @@ with tab3:
         buis_team_filtered_df = buis_team_open_issues[buis_team_open_issues["Assignee"].isin(buis_team_assignee_filter)]
         buis_selected_columns = ["Issue Type", "Issue key", "Summary", "Reporter", "Severity", "Applications Affected", "Created"]
         buis_team_col_filtered_df = buis_team_filtered_df.loc[:, buis_selected_columns]
-        buis_team_sorted_df = buis_team_col_filtered_df.sort_values(by=['Applications Affected', 'Created'], ascending=[False, True])
+        buis_team_sorted_df = buis_team_col_filtered_df.sort_values(by=['Severity','Applications Affected', 'Created'], ascending=[True, False, True])
     
         # Display the filtered DataFrame
         st.dataframe(buis_team_sorted_df)
@@ -289,7 +290,7 @@ with tab4:
         dev_team_filtered_df = dev_team_open_issues[dev_team_open_issues["Assignee"].isin(dev_team_assignee_filter)]
         dev_selected_columns = ["Issue Type", "Issue key", "Summary", "Reporter", "Severity", "Applications Affected", "Created"]
         dev_team_col_filtered_df = dev_team_filtered_df.loc[:, dev_selected_columns]
-        dev_team_sorted_df = dev_team_col_filtered_df.sort_values(by=['Applications Affected', 'Created'], ascending=[False, True])
+        dev_team_sorted_df = dev_team_col_filtered_df.sort_values(by=['Severity','Applications Affected', 'Created'], ascending=[True, False, True])
     
         # Display the filtered DataFrame
         st.dataframe(dev_team_sorted_df)
@@ -385,7 +386,7 @@ with tab5:
         L2_team_filtered_df = L2_team_open_issues[L2_team_open_issues["Assignee"].isin(L2_team_assignee_filter)]
         L2_selected_columns = ["Issue Type", "Issue key", "Summary", "Reporter", "Severity", "Applications Affected", "Created"]
         L2_team_col_filtered_df = L2_team_filtered_df.loc[:, L2_selected_columns]
-        L2_team_sorted_df = L2_team_col_filtered_df.sort_values(by=['Applications Affected', 'Created'], ascending=[False, True])
+        L2_team_sorted_df = L2_team_col_filtered_df.sort_values(by=['Severity','Applications Affected', 'Created'], ascending=[True, False, True])
     
         # Display the filtered DataFrame
         st.dataframe(L2_team_sorted_df)
